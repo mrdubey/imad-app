@@ -1,3 +1,3 @@
 console.log('Loaded!');
-var element=getElementbyId('main-text');
+var element=documnet.getElementbyId('main-text');
 element.innerHTML="new change";
