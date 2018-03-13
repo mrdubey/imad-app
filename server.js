@@ -19,7 +19,7 @@ var articeOne = {
 </p>`
     
 };
-function createObject(data)
+function createTemplate(data)
 {
     var title=data.title;
     var heading=data.heading;
