@@ -5,9 +5,9 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-var articleOne = {
-    
+var articles =
+{
+   'article-one':{
     title:"Article One | sandeep dubey",
     heading:"Article One ",
     date:"sep 5,2016",
@@ -17,7 +17,29 @@ var articleOne = {
 </p>
 <p>djskfsfjdksjfdhxfjbnvlcfsoivljvdsoflosurghfusofhruhfufhfugdhgdughdfoshfrufhsfudfhoghsdfihfdf
 </p>`
-    
+},
+   'article-two': {
+    title:"Article Two | sandeep dubey",
+    heading:"Article Two ",
+    date:"sep 15,2016",
+    content:`<p>djskfsfjdksjfdhxfjbnvlcfsoivljvdsoflosurghfusofhruhfufhfugdhgdughdfoshfrufhsfudfhoghsdhgiodf
+</p>
+<p>djskfsfjdksjfdhxfjbnvlcfsoivljvdsoflosurghfusofhruhfufhfugdhgdughdfoshfrufhsfudfhoghsdfihfdf
+</p>
+<p>djskfsfjdksjfdhxfjbnvlcfsoivljvdsoflosurghfusofhruhfufhfugdhgdughdfoshfrufhsfudfhoghsdfihfdf
+</p>`
+},
+   'article-three':{
+    title:"Article One | sandeep dubey",
+    heading:"Article Three ",
+    date:"sep 25,2016",
+    content:`<p>djskfsfjdksjfdhxfjbnvlcfsoivljvdsoflosurghfusofhruhfufhfugdhgdughdfoshfrufhsfudfhoghsdhgiodf
+</p>
+<p>djskfsfjdksjfdhxfjbnvlcfsoivljvdsoflosurghfusofhruhfufhfugdhgdughdfoshfrufhsfudfhoghsdfihfdf
+</p>
+<p>djskfsfjdksjfdhxfjbnvlcfsoivljvdsoflosurghfusofhruhfufhfugdhgdughdfoshfrufhsfudfhoghsdfihfdf
+</p>`
+    }
 };
 function createTemplate(data)
 {
@@ -60,8 +82,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req,res){
-    res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req,res){
+    //articleName=article-one
+    //artcilesName=req.params.articles[articleName]
+    res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function (req,res){
