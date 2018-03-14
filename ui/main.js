@@ -1,5 +1,6 @@
 //counter code
 var button = document.getElementById("counter");
+var counter=0;
 button.onclick= function()
 {
     //Create a request
@@ -16,7 +17,7 @@ button.onclick= function()
             }
         }
         //not done
-    }
+    };
     //Make the request
     request.open('GET','http://sndpdby28.imad.hasura-app.io',true);
     request.send(null);
