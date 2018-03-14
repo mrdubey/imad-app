@@ -39,4 +39,4 @@ submit.onclick=function()
     }
     var ul=document.getElementById('namesList');
     ul.innerHTML=list;
-}
+};
