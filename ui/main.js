@@ -18,7 +18,7 @@ button.onclick= function()
         //not done
     };
     //Make the request
-    request.open('GET','http://sndpdby28.imad.hasura-app.io',true);
+    request.open('GET','http://sndpdby28.imad.hasura-app.io/counter',true);
     request.send(null);
    
 };
